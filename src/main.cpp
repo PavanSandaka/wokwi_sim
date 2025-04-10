@@ -130,7 +130,7 @@ void showVictoryMessage() {
   display.setCursor(0, 10);
   display.setTextSize(1);
   display.setTextColor(SSD1306_WHITE);
-  display.println("🎉 Goal Reached!");
+  display.println("Goal Reached!");
   display.display();
 }
 
