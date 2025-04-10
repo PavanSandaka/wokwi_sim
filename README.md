@@ -120,3 +120,52 @@ LOOP:
     UPDATE lastButtonState = current state
 
 END LOOP
+
+## Technical Specifications
+### Hardware Components (Simulated)
+
+- Microcontroller: ESP32 Dev Module (Wokwi-compatible)
+
+- Button: Push-button with internal pull-up configuration
+
+- OLED Display: SSD1306 128x64 pixels (I2C interface)
+
+- Buzzer: Active buzzer connected via GPIO
+
+- LED Strip: Addressable RGB LEDs (WS2812, 16 LEDs, driven via a single data pin)
+
+- RS485 Communication: Simulated using UART2 pins with DE/RE control pin
+
+### Communication Protocols
+
+- I2C — Used for communication with the SSD1306 OLED display
+
+- GPIO (Digital I/O) — Used for button input and buzzer output
+
+- Single-wire (NeoPixel protocol) — Used for WS2812 addressable RGB LED strip
+
+- UART (RS485 simulation) — Used for serial communication with a master device (TX, RX, and DE pins)
+
+### Required Libraries
+
+- Adafruit_SSD1306 — For OLED display
+
+- Adafruit_GFX — Graphics library for OLED
+
+- Adafruit_NeoPixel — For WS2812 RGB LED control
+
+
+*Make sure these libraries are installed and declared in your platformio.ini if using PlatformIO.
+
+
+## Alternative Detection Methods
+
+To make the person counting system more robust and automatic, alternative sensing methods can replace or complement the manual button press:
+
+1. IR Proximity Sensor: Detects nearby objects or people using reflected infrared light. Suitable for basic entry/exit counters.
+
+2. Ultrasonic Sensor: Uses sound waves to detect presence and distance changes. Can detect a person walking past a doorway.
+
+3. ESP32-CAM + Computer Vision: Uses machine learning to detect people using object detection models. Great for intelligent automation.
+
+And soon...These methods offer automation, reduce human error, and enable scalability.
